@@ -32,10 +32,6 @@ function setSwipe(elem) {
       setNumber();
     }
   });
-
-  /*
-   * 前の番号を表示
-   */
 }
 
 /*
