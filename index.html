@@ -8,21 +8,29 @@
       margin:0 ;
     }
     header{
+      /* position: relative; */
+      position: fixed;
+      width: 100vw;
       height: 50px;
       background-color: black;
       color: white;
+      z-index: 100;
     }
-    footer{
+    /* footer{
       position: absolute;
       bottom: 0;
       width: 100vw;
       height: 30px;
       background-color: black;
       color: white;
-    }
+      z-index: 100;
+    } */
 
     #swipe_area{
+      position: absolute;
       background-color: pink;
+      width: 100vw;
+      height: 100vh;
     }
     main{
 
@@ -32,7 +40,7 @@
     }
     img{
       width:80vw;
-      height: auto;
+
     }
   </style>
 </head>
@@ -46,7 +54,7 @@
       <p id="number"></p>
     </div>
   </main>
-	<footer><small>&copy; 2021</small></footer>
+	<!-- <footer><small>&copy; 2021</small></footer> -->
   <script src="./script.js"></script>
 </body>
 </html>
