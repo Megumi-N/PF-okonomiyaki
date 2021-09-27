@@ -28,15 +28,17 @@ function setSwipe(elem) {
       setNumber();
 
       if (0 < s && s < 100) {
-        alert("しょう");
+        alert("何も起きなかった");
       } else if (100 <= s && s < 200) {
-        alert("ちゅう");
+        alert("裏返らなかったので半分におった");
       } else if (200 <= s && s < 300) {
-        alert("じょう");
+        alert("完璧！");
       } else if (300 <= s && s < 400) {
-        alert("さい");
+        alert("鉄板の外に逃げ出した");
+      } else if (400 <= s && s < 500) {
+        alert("衛星になった");
       } else {
-        alert("ぷんぷん");
+        alert("星になった");
       }
     }
   });
