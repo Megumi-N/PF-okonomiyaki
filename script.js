@@ -27,22 +27,15 @@ function setSwipe(elem) {
   });
 
   t.addEventListener("touchend", function (e) {
-    // console.log(startY);
-    // console.log(moveY);
-    // console.log(dist);
-
     if (startY > moveY && startY > moveY + dist) {
-      up();
+      s = startY - moveY;
+      setNumber();
     }
   });
 
   /*
    * 前の番号を表示
    */
-  function up() {
-    s = startY - moveY;
-    setNumber();
-  }
 }
 
 /*
@@ -60,7 +53,7 @@ window.addEventListener("load", function () {
   number = document.getElementById("number");
 
   // 数値を画面に表示
-  no = 0;
+  s = "移動距離";
   setNumber();
 
   // スワイプイベント設定
