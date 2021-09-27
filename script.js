@@ -3,6 +3,7 @@
  */
 let no; // 数値格納用
 let number; // 数値表示部分のDOM取得用
+let s;
 
 /*
  * スワイプイベント設定
@@ -26,45 +27,29 @@ function setSwipe(elem) {
   });
 
   t.addEventListener("touchend", function (e) {
-    console.log(startY);
-    console.log(moveY);
-    console.log(dist);
+    // console.log(startY);
+    // console.log(moveY);
+    // console.log(dist);
 
     if (startY > moveY && startY > moveY + dist) {
-      // console.log(moveY);
-      // console.log(startY);
-      // 右から左にスワイプ
-      previous();
-    } else if (startY < moveY && startY + dist < moveY) {
-      // console.log(moveY);
-      // console.log(startY);
-      // 左から右にスワイプ
-      next();
+      up();
     }
   });
-}
 
-/*
- * 次の番号を表示
- */
-function next() {
-  no--;
-  setNumber();
-}
-
-/*
- * 前の番号を表示
- */
-function previous() {
-  no++;
-  setNumber();
+  /*
+   * 前の番号を表示
+   */
+  function up() {
+    s = startY - moveY;
+    setNumber();
+  }
 }
 
 /*
  * 数値を画面に表示する
  */
 function setNumber() {
-  number.innerHTML = no;
+  number.innerHTML = s;
 }
 
 /*
