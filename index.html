@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=yes">
+	<title>JavaScriptでスワイプ処理をする</title>
+  <style>
+    *{
+      margin:0 ;
+    }
+    footer{
+      position: absolute;/*←絶対位置*/
+      bottom: 0; /*下に固定*/
+    }
+    footer small{
+      text-align: center;
+    }
+    main{
+
+    }
+    #swipe_area {
+      text-align: center;
+    }
+    img{
+      width:80vw;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+	<header>
+		<h1>お好み焼きがえし</h1>
+	</header>
+  <main>
+    <div id="swipe_area" >
+      <img src="yake-removebg-preview.png" alt="">
+      <p id="number"></p>
+      <p>上下にスワイプすると数値が増減します</p>
+    </div>
+  </main>
+	<footer><small>&copy; 2021</small></footer>
+  <script src="./script.js"></script>
+</body>
+</html>
