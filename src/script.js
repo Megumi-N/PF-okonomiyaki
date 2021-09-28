@@ -3,9 +3,38 @@ let no; // 数値格納用
 let distance; // スワイプした座標距離
 let startY; // タッチ開始 y座標
 let moveY; // スワイプ中の y座標
-let dist = 0; // スワイプを感知する最低距離（ピクセル単位）
+let dist = 20; // スワイプを感知する最低距離（ピクセル単位）
 const image = document.getElementsByTagName("img")[0];
 const topImage = document.getElementById("splash");
+
+// モーダルのテキストを変更する
+let titleText;
+let bodyText;
+
+// modalの中にツイート機能を入れるメソッド
+const twitterText = () => {
+  const twitter = document.createElement("a");
+  twitter.href = `https://twitter.com/intent/tweet?&text=
+    お好み焼きを返す技術力が今、試される...%0a
+    スマホから遊んでね。%0a
+    %23お好み焼き%0a
+    %23くそアプリ%0a
+    %23お好み焼きを返すだけのアプリ%0a
+    &url=https://zen-sinoussi-c18c33.netlify.app/`;
+  twitter.id = "twitter";
+  twitter.setAttribute("target", "_blank");
+  twitter.innerText = "ツイートする";
+  modalBody.appendChild(twitter);
+};
+
+// モーダルの中身を編集するメソッド
+const modalModify = () => {
+  modalTitle.innerText = titleText;
+  modalBody.innerHTML = bodyText;
+  modalButton.innerText = "再挑戦";
+  modalButton.setAttribute("onclick", "window.location.reload();");
+  twitterText();
+};
 
 //  スワイプイベント設定
 function setSwipe(elem) {
@@ -27,17 +56,9 @@ function setSwipe(elem) {
     if (startY > moveY && startY > moveY + dist) {
       distance = startY - moveY;
       const oko = document.getElementById("okonomiyaki");
-      //level1
-      let titleText;
-      let bodyText;
-      const modalModify = function () {
-        modalTitle.innerText = titleText;
-        modalBody.innerHTML = bodyText;
-        modalButton.innerText = "再挑戦";
-        modalButton.setAttribute("onclick", "window.location.reload();");
-      };
 
-      if (0 < distance && distance < 200) {
+      //level1
+      if (20 < distance && distance < 200) {
         oko.classList = "okonomiyaki_up_level1";
         setTimeout(() => {
           modalOpen();
@@ -55,11 +76,12 @@ function setSwipe(elem) {
         oko.classList = "okonomiyaki_up_level2";
         setTimeout(() => {
           modalOpen();
-          titleText = "惜しい！あとひとおし!!";
-          bodyText = `惜しい！<br>
-        あと少し!<br>
-        あと少し距離を伸ばそう!<br>
-        お好み焼きまであと一歩!!`;
+          titleText = "惜しい！あとひと押し!!";
+          bodyText = `
+            惜しい！<br>
+            あと少し!<br>
+            あと少し距離を伸ばそう!<br>
+            お好み焼きまであと一歩!!<br>`;
           modalModify();
         }, 3000);
       }
@@ -67,26 +89,38 @@ function setSwipe(elem) {
       else if (400 <= distance && distance < 450) {
         oko.classList = "okonomiyaki_up_level3";
         document.getElementById("uragaeshi").classList.add("uragaeshi");
+
+        // 名人のモーダルを遅延表示させる
+        const meizinModal = setTimeout(() => {
+          modalOpen();
+          titleText = "お好み焼き名人を襲名";
+          bodyText = `
+          とんでもないセンスに満ち溢れていますね...<br>
+          手首のスナップ...<br>
+          そして力の入れ具合...<br>
+          もはや名人です。<br>`;
+          modalModify();
+          document.getElementById("twitter").href = `
+          https://twitter.com/intent/tweet?&text=
+          我、お好み焼き返し名人なり!!%0a%0a
+          お好み焼きを返す技術力が今、試される...%0a
+          スマホから遊んでね。%0a
+          %23お好み焼き%0a
+          %23くそアプリ%0a
+          %23お好み焼きを返すだけのアプリ%0a
+          &url=https://zen-sinoussi-c18c33.netlify.app/`;
+        }, 6500);
+        // 名人のgifを遅延表示させるメソッド
         setTimeout(() => {
           const image = document.createElement("img");
           image.src = "./images/topping_okonomiyaki.gif";
           image.id = "meizin";
           image.alt = "完成動画";
           image.style.zIndex = 100;
-          const a = document.getElementById("swipe_area");
-          a.appendChild(image);
+          const gif = document.getElementById("swipe_area");
+          gif.appendChild(image);
+          meizinModal();
         }, 3200);
-        setTimeout(() => {
-          modalOpen();
-          titleText = "お好み焼き名人を襲名";
-          bodyText = `
-            とんでもないセンスに満ち溢れていますね...<br>
-            手首のスナップ...<br>
-            そして力の入れ具合...<br>
-            もはや名人です。<br>
-            `;
-          modalModify();
-        }, 6500);
       }
       //level4
       else {
@@ -98,7 +132,7 @@ function setSwipe(elem) {
           どうして...?<br>
           どうしてそんなに力を入れたんですか...?<br>
           お好み焼きもまさか星になるとは思ってなかったと思います。<br>
-          お好み焼きを作るときは必ず保護者の方と一緒に作ってください。
+          お好み焼きを作るときは必ず保護者の方と一緒に作ってください。<br>
           `;
           modalModify();
         }, 3000);
@@ -117,5 +151,5 @@ topImage.addEventListener("touchstart", function () {
   this.classList = "splash";
   setTimeout(() => {
     this.remove();
-  }, 980);
+  }, 950);
 });
