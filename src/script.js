@@ -5,6 +5,7 @@ let startY; // タッチ開始 y座標
 let moveY; // スワイプ中の y座標
 let dist = 0; // スワイプを感知する最低距離（ピクセル単位）
 const image = document.getElementsByTagName("img")[0];
+const topImage = document.getElementById("splash");
 
 //  スワイプイベント設定
 function setSwipe(elem) {
@@ -25,7 +26,6 @@ function setSwipe(elem) {
   t.addEventListener("touchend", function (e) {
     if (startY > moveY && startY > moveY + dist) {
       distance = startY - moveY;
-      setNumber();
       const oko = document.getElementById("okonomiyaki");
       //level1
       let titleText;
@@ -45,7 +45,8 @@ function setSwipe(elem) {
           bodyText = `え?<br>
           なんかしました?<br>
           そよ風が吹いたかと思いました。<br>
-          その程度でお好み焼きが食べれると思ったら笑止千万!!`;
+          その程度でお好み焼きを食べられると思っているとは...笑止千万!!<br>
+          `;
           modalModify();
         }, 3000);
       }
@@ -58,7 +59,7 @@ function setSwipe(elem) {
           bodyText = `惜しい！<br>
         あと少し!<br>
         あと少し距離を伸ばそう!<br>
-        お好み焼きまであと一歩!!"`;
+        お好み焼きまであと一歩!!`;
           modalModify();
         }, 3000);
       }
@@ -67,15 +68,25 @@ function setSwipe(elem) {
         oko.classList = "okonomiyaki_up_level3";
         document.getElementById("uragaeshi").classList.add("uragaeshi");
         setTimeout(() => {
+          const image = document.createElement("img");
+          image.src = "./images/topping_okonomiyaki.gif";
+          image.id = "meizin";
+          image.alt = "完成動画";
+          image.style.zIndex = 100;
+          const a = document.getElementById("swipe_area");
+          a.appendChild(image);
+        }, 3200);
+        setTimeout(() => {
           modalOpen();
           titleText = "お好み焼き名人を襲名";
           bodyText = `
-        とんでもないセンスに満ち溢れていますね...<br>
-        手首のスナップ...<br>
-        そして力の入れ具合...<br>
-        もはや名人です。`;
+            とんでもないセンスに満ち溢れていますね...<br>
+            手首のスナップ...<br>
+            そして力の入れ具合...<br>
+            もはや名人です。<br>
+            `;
           modalModify();
-        }, 3000);
+        }, 6000);
       }
       //level4
       else {
@@ -96,17 +107,15 @@ function setSwipe(elem) {
   });
 }
 
-// 数値を画面に表示する
-function setNumber() {
-  console.log(distance);
-}
-
 //  起動時の処理
 window.addEventListener("load", function () {
-  number = document.getElementById("number"); // 数値表示部分のDOM取得
   setSwipe("#swipe_area"); // スワイプイベント設定
 });
 
-window.onload = setTimeout(() => {
-  document.getElementById("splash").remove();
-}, 4000);
+// 最初の説明の画面をタッチで削除(cssアニメーションとタイミングを合わせて)
+topImage.addEventListener("touchstart", function () {
+  this.classList = "splash";
+  setTimeout(() => {
+    this.remove();
+  }, 980);
+});
