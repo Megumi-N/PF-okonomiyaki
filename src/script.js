@@ -104,6 +104,9 @@ function setNumber() {
 //  起動時の処理
 window.addEventListener("load", function () {
   number = document.getElementById("number"); // 数値表示部分のDOM取得
-  distance = "移動距離"; // 数値を画面に表示
   setSwipe("#swipe_area"); // スワイプイベント設定
 });
+
+window.onload = setTimeout(() => {
+  document.getElementById("splash").remove();
+}, 4000);
