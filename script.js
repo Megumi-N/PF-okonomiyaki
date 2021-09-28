@@ -1,6 +1,5 @@
 // グローバル変数
 let no; // 数値格納用
-let number; // 数値表示部分のDOM取得用
 let s;
 let startY; // タッチ開始 y座標
 let moveY; // スワイプ中の y座標
@@ -31,32 +30,27 @@ function setSwipe(elem) {
       //level1
       if (0 < s && s < 100) {
         oko.classList = "okonomiyaki_up_level1";
-        alert("何も起きなかった");
+        number.innerHTML = "何も起きなかった";
       }
       //level2
       else if (100 <= s && s < 200) {
         oko.classList = "okonomiyaki_up_level2";
-        alert("裏返らなかったので半分におった");
+        number.innerHTML = "裏返らなかったので半分におった";
       }
       //level3
       else if (200 <= s && s < 300) {
         oko.classList = "okonomiyaki_up_level3";
-        alert("完璧！");
+        number.innerHTML = "完璧！";
       }
       //level4
       else if (300 <= s && s < 400) {
         oko.classList = "okonomiyaki_up_level4";
-        alert("鉄板の外に逃げ出した");
+        number.innerHTML = "鉄板の外に逃げ出した";
       }
       //level5
-      else if (400 <= s && s < 500) {
-        oko.classList = "okonomiyaki_up_level5";
-        alert("衛星になった");
-      }
-      //level6
       else {
-        oko.classList = "okonomiyaki_up_level6";
-        alert("星になった");
+        oko.classList = "okonomiyaki_up_level5";
+        number.innerHTML = "星になった";
       }
     }
   });

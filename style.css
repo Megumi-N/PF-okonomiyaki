@@ -12,6 +12,7 @@ header {
   text-align: center;
 }
 main {
+  background-color: palegreen;
 }
 /* footer{
   position: absolute;
@@ -29,18 +30,60 @@ main {
   height: 100vh;
 }
 
-img {
-  width: 80vw;
+#swipe_area #number {
   position: absolute;
+  top: 70vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+img {
+  width: 90vw;
+  position: absolute;
+  top: 10vh;
   left: 0;
   right: 0;
   margin: auto;
 }
 
 .teppan {
-  z-index: -1;
+  z-index: 1;
 }
 
+.kemuri1 {
+  z-index: 100;
+  animation: kemu1 9s infinite;
+}
+
+@keyframes kemu1 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.kemuri2 {
+  animation: kemu1 9s infinite;
+}
+.kemuri3 {
+  animation: kemu1 9s infinite;
+}
+
+#okonomiyaki {
+  z-index: 50;
+}
 .okonomiyaki {
   animation: puru 3s infinite;
 }
@@ -73,11 +116,20 @@ img {
   animation: flow1 2s forwards;
 }
 @keyframes flow1 {
-  0% {
+  /* 0% {
     transform: translateY(0px);
   }
   50% {
     transform: translateY(-5vh);
+  }
+  100% {
+    transform: translateY(0px);
+  } */
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20vh);
   }
   100% {
     transform: translateY(0px);
@@ -89,13 +141,13 @@ img {
 }
 @keyframes flow2 {
   0% {
-    transform: translateY(0px);
+    transform: rotateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: rotate(90deg);
   }
   100% {
-    transform: translateY(0px);
+    transform: rotate(0deg);
   }
 }
 
@@ -105,13 +157,13 @@ img {
 
 @keyframes flow3 {
   0% {
-    transform: translateY(0px);
+    transform: rotateY(0);
   }
-  50% {
-    transform: translateY(-10vh);
+  80% {
+    transform: rotate(180deg);
   }
   100% {
-    transform: translateY(0px);
+    transform: rotate(360deg);
   }
 }
 
@@ -139,26 +191,7 @@ img {
   0% {
     transform: translateY(0px);
   }
-  50% {
-    transform: translateY(-80vh);
-  }
   100% {
-    transform: translateY(0px);
-  }
-}
-
-.okonomiyaki_up_level6 {
-  animation: flow6 2s forwards;
-}
-
-@keyframes flow6 {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
     transform: translateY(-100vh);
-  }
-  100% {
-    transform: translateY(0px);
   }
 }
