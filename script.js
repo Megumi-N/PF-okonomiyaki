@@ -45,14 +45,17 @@ function setSwipe(elem) {
       }
       //level4
       else if (300 <= s && s < 400) {
+        oko.classList = "okonomiyaki_up_level4";
         alert("鉄板の外に逃げ出した");
       }
       //level5
       else if (400 <= s && s < 500) {
+        oko.classList = "okonomiyaki_up_level5";
         alert("衛星になった");
       }
       //level6
       else {
+        oko.classList = "okonomiyaki_up_level6";
         alert("星になった");
       }
     }
