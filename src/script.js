@@ -122,11 +122,4 @@ if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
       this.remove();
     }, 950);
   });
-} else {
-  pcBlockModal();
-  blockModalTitle.innerText = "PCからは遊べないよ!";
-  blockModalBody.innerHTML = `
-    PCからは遊べないよ!<br>
-    スマホから遊んでね!!
-   `;
 }
