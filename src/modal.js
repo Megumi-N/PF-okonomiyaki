@@ -9,7 +9,6 @@ const blockModalBody = document.getElementById("pcBlockModalBody");
 
 const modalOpen = () => {
   modal.classList.add("show");
-  modal.tabIndex = "-1";
   modal.style.display = "block";
   modal.ariaModal = "true";
   modal.role = "dialog";
@@ -17,7 +16,6 @@ const modalOpen = () => {
 
 const pcBlockModal = () => {
   blockModal.classList.add("show");
-  blockModal.tabIndex = "-1";
   blockModal.style.display = "block";
   blockModal.ariaModal = "true";
   blockModal.role = "dialog";
