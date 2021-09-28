@@ -116,20 +116,11 @@ img {
   animation: flow1 2s forwards;
 }
 @keyframes flow1 {
-  /* 0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-5vh);
-  }
-  100% {
-    transform: translateY(0px);
-  } */
   0% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20vh);
+    transform: translateY(-5px);
   }
   100% {
     transform: translateY(0px);
@@ -141,29 +132,61 @@ img {
 }
 @keyframes flow2 {
   0% {
-    transform: rotateY(0);
+    transform: rotate(0deg);
   }
-  50% {
-    transform: rotate(90deg);
+  75% {
+    transform: rotate(120deg);
   }
   100% {
     transform: rotate(0deg);
   }
 }
 
+/* 完璧 */
 .okonomiyaki_up_level3 {
   animation: flow3 2s forwards;
+  transition-property: display;
 }
 
 @keyframes flow3 {
   0% {
-    transform: rotateY(0);
+    transform: translateY(0px);
   }
-  80% {
+  60% {
+    opacity: 0;
+  }
+  75% {
     transform: rotate(180deg);
+    opacity: 0;
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+}
+
+#uragaeshi {
+  z-index: 50;
+  opacity: 0;
+}
+.uragaeshi {
+  animation: flow3_1 2s forwards;
+}
+
+@keyframes flow3_1 {
+  0% {
+    transform: translateY(0px);
+  }
+  60% {
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
   }
 }
 
@@ -172,22 +195,6 @@ img {
 }
 
 @keyframes flow4 {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20vh);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.okonomiyaki_up_level5 {
-  animation: flow5 2s forwards;
-}
-
-@keyframes flow5 {
   0% {
     transform: translateY(0px);
   }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=yes">
+	<title>JavaScriptでスワイプ処理をする</title>
+  <link rel="stylesheet" href="../src/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+	<header>
+		<h1>お好み焼きがえし</h1>
+	</header>
+  <main>
+    <div id="swipe_area" >
+      <!-- <img src="okonomiyaki.gif" alt="" > -->
+      <img src="./images/kemuri1.PNG" class="kemuri1" alt="煙画像1">
+      <img src="./images/kemuri2.PNG" class="kemuri2" alt="煙画像2">
+      <img src="./images/kemuri3.PNG" class="kemuri2" alt="煙画像3">
+      <img src="./images/uragaeshi.PNG" id="uragaeshi" alt="裏返しのお好み焼き画像" >
+      <img src="./images/oko.PNG" id="okonomiyaki" class="okonomiyaki" alt="お好み焼き画像" >
+      <img src="./images/teppan.PNG" class="teppan" alt="鉄板画像">
+      <p id="number">スワイプしてお好み焼きをひっくり返そう</p>
+    </div>
+
+    <!-- Modal -->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+      </div>
+      <div class="modal-body" id="modalBody">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="modalButton" class="btn btn-secondary" data-bs-dismiss="modal"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </main>
+	<!-- <footer><small>&copy; 2021</small></footer> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script src="../src/modal.js"></script>
+  <script src="../src/script.js"></script>
+</body>
+</html>
