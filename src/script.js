@@ -86,7 +86,7 @@ function setSwipe(elem) {
             もはや名人です。<br>
             `;
           modalModify();
-        }, 6000);
+        }, 6500);
       }
       //level4
       else {
