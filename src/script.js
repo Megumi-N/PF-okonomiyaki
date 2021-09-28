@@ -14,13 +14,7 @@ let bodyText;
 // modalの中にツイート機能を入れるメソッド
 const twitterText = () => {
   const twitter = document.createElement("a");
-  twitter.href = `https://twitter.com/intent/tweet?&text=
-    お好み焼きを返す技術力が今、試される...%0a
-    スマホから遊んでね。%0a
-    %23お好み焼き%0a
-    %23くそアプリ%0a
-    %23お好み焼きを返すだけのアプリ%0a
-    &url=https://zen-sinoussi-c18c33.netlify.app/`;
+  twitter.href = `https://twitter.com/intent/tweet?&text=お好み焼きを返す技術力が今、試される...%0aスマホから遊んでね。%0a%23お好み焼き%0a%23くそアプリ%0a%23お好み焼きを返すだけのアプリ%0a&url=https://zen-sinoussi-c18c33.netlify.app/`;
   twitter.id = "twitter";
   twitter.setAttribute("target", "_blank");
   twitter.innerText = "ツイートする";
@@ -101,14 +95,7 @@ function setSwipe(elem) {
           もはや名人です。<br>`;
           modalModify();
           document.getElementById("twitter").href = `
-          https://twitter.com/intent/tweet?&text=
-          我、お好み焼き返し名人なり!!%0a%0a
-          お好み焼きを返す技術力が今、試される...%0a
-          スマホから遊んでね。%0a
-          %23お好み焼き%0a
-          %23くそアプリ%0a
-          %23お好み焼きを返すだけのアプリ%0a
-          &url=https://zen-sinoussi-c18c33.netlify.app/`;
+          https://twitter.com/intent/tweet?&text=我、お好み焼き返し名人なり!!%0a%0aお好み焼きを返す技術力が今、試される...%0aスマホから遊んでね。%0a%23お好み焼き%0a%23くそアプリ%0a%23お好み焼きを返すだけのアプリ%0a&url=https://zen-sinoussi-c18c33.netlify.app/`;
         }, 6500);
         // 名人のgifを遅延表示させるメソッド
         setTimeout(() => {
