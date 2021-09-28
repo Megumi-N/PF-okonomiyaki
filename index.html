@@ -3,46 +3,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,user-scalable=yes">
 	<title>JavaScriptでスワイプ処理をする</title>
-  <style>
-    *{
-      margin:0 ;
-    }
-    header{
-      /* position: relative; */
-      position: fixed;
-      width: 100vw;
-      height: 50px;
-      background-color: black;
-      color: white;
-      z-index: 100;
-    }
-    /* footer{
-      position: absolute;
-      bottom: 0;
-      width: 100vw;
-      height: 30px;
-      background-color: black;
-      color: white;
-      z-index: 100;
-    } */
-
-    #swipe_area{
-      position: absolute;
-      background-color: pink;
-      width: 100vw;
-      height: 100vh;
-    }
-    main{
-
-    }
-    #swipe_area {
-      text-align: center;
-    }
-    img{
-      margin-top:20vh;
-      width:80vw;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<header>
@@ -50,8 +11,11 @@
 	</header>
   <main>
     <div id="swipe_area" >
-      <img src="okonomiyaki.gif" alt="" >
+      <!-- <img src="okonomiyaki.gif" alt="" > -->
+      <img src="oko.PNG" id="okonomiyaki" class="okonomiyaki" alt="" srcset="">
+      <img src="teppan.PNG" class="teppan" alt="" srcset="">
       <p id="number"></p>
+      <p>スワイプでお好み焼きをひっくり返そう！</p>
     </div>
   </main>
 	<!-- <footer><small>&copy; 2021</small></footer> -->

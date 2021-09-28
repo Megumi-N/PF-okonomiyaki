@@ -5,6 +5,7 @@ let s;
 let startY; // タッチ開始 y座標
 let moveY; // スワイプ中の y座標
 let dist = 0; // スワイプを感知する最低距離（ピクセル単位）
+const image = document.getElementsByTagName("img")[0];
 
 //  スワイプイベント設定
 function setSwipe(elem) {
@@ -26,18 +27,32 @@ function setSwipe(elem) {
     if (startY > moveY && startY > moveY + dist) {
       s = startY - moveY;
       setNumber();
-
+      const oko = document.getElementById("okonomiyaki");
+      //level1
       if (0 < s && s < 100) {
+        oko.classList = "okonomiyaki_up_level1";
         alert("何も起きなかった");
-      } else if (100 <= s && s < 200) {
+      }
+      //level2
+      else if (100 <= s && s < 200) {
+        oko.classList = "okonomiyaki_up_level2";
         alert("裏返らなかったので半分におった");
-      } else if (200 <= s && s < 300) {
+      }
+      //level3
+      else if (200 <= s && s < 300) {
+        oko.classList = "okonomiyaki_up_level3";
         alert("完璧！");
-      } else if (300 <= s && s < 400) {
+      }
+      //level4
+      else if (300 <= s && s < 400) {
         alert("鉄板の外に逃げ出した");
-      } else if (400 <= s && s < 500) {
+      }
+      //level5
+      else if (400 <= s && s < 500) {
         alert("衛星になった");
-      } else {
+      }
+      //level6
+      else {
         alert("星になった");
       }
     }
