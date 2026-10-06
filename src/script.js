@@ -1,10 +1,8 @@
 // グローバル変数
-let no; // 数値格納用
 let distance; // スワイプした座標距離
 let startY; // タッチ開始 y座標
 let moveY; // スワイプ中の y座標
 let dist = 20; // スワイプを感知する最低距離（ピクセル単位）
-const image = document.getElementsByTagName("img")[0];
 const topImage = document.getElementById("splash");
 
 // モーダルのテキストを変更する
@@ -66,7 +64,7 @@ function setSwipe(elem) {
         document.getElementById("uragaeshi").classList.add("uragaeshi");
 
         // 名人のモーダルを遅延表示させる
-        const meizinModal = setTimeout(() => {
+        setTimeout(() => {
           modalOpen();
           titleText = "お好み焼き名人を襲名";
           bodyText = `
@@ -87,7 +85,6 @@ function setSwipe(elem) {
           image.style.zIndex = 100;
           const gif = document.getElementById("swipe_area");
           gif.appendChild(image);
-          meizinModal();
         }, 3200);
       }
       //level4

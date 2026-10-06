@@ -3,10 +3,6 @@ const modalTitle = document.getElementById("staticBackdropLabel");
 const modalBody = document.getElementById("modalBody");
 const modalButton = document.getElementById("modalButton");
 
-const blockModal = document.getElementById("pcBlockModal");
-const blockModalTitle = document.getElementById("pcBlockModalTitle");
-const blockModalBody = document.getElementById("pcBlockModalBody");
-
 const modalOpen = () => {
   modal.classList.add("show");
   modal.style.display = "block";
@@ -32,11 +28,4 @@ const modalModify = () => {
   modalButton.innerText = "再挑戦";
   modalButton.setAttribute("onclick", "window.location.reload();");
   twitterText();
-};
-
-const pcBlockModal = () => {
-  blockModal.classList.add("show");
-  blockModal.style.display = "block";
-  blockModal.ariaModal = "true";
-  blockModal.role = "dialog";
 };
