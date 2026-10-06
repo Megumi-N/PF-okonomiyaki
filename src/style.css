@@ -1,6 +1,12 @@
 * {
   margin: 0;
   font-family: "ほのか新丸ゴシック";
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 /* 最初の説明画面 */
