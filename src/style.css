@@ -56,6 +56,11 @@ body {
 }
 
 main {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: palegreen;
 }
 /* footer{
@@ -70,23 +75,27 @@ main {
 
 #swipe_area {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 9 / 16;
+  max-height: 100vh;
+  max-height: 100dvh;
+  margin: 0 auto;
 }
 
 #swipe_area #text {
   position: absolute;
-  top: 70vh;
+  top: 70%;
   left: 0;
   right: 0;
   margin: auto;
   text-align: center;
 }
 
-img {
-  width: 90vw;
+#swipe_area img {
+  width: 90%;
   position: absolute;
-  top: 10vh;
+  top: 10%;
   left: 0;
   right: 0;
   margin: auto;
