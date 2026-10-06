@@ -8,6 +8,7 @@ html,
 body {
   height: 100vh;
   height: 100dvh;
+  height: var(--app-height, 100dvh);
   overflow: hidden;
 }
 
@@ -50,6 +51,7 @@ body {
 main {
   min-height: 100vh;
   min-height: 100dvh;
+  min-height: var(--app-height, 100dvh);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,6 +72,7 @@ main {
   width: 100%;
   max-width: min(500px, calc(100vh * 9 / 16));
   max-width: min(500px, calc(100dvh * 9 / 16));
+  max-width: min(500px, calc(var(--app-height, 100dvh) * 9 / 16));
   aspect-ratio: 9 / 16;
   margin: 0 auto;
 }

@@ -5,6 +5,19 @@ let moveY; // スワイプ中の y座標
 let dist = 20; // スワイプを感知する最低距離（ピクセル単位）
 const topImage = document.getElementById("splash");
 
+// iOS Safariはボトムツールバーの開閉でdvhがスワイプ中にも変動し、
+// プレイ画面のサイズが動いてしまうため、読み込み時の高さで固定する
+function setAppHeight() {
+  document.documentElement.style.setProperty(
+    "--app-height",
+    `${window.innerHeight}px`
+  );
+}
+setAppHeight();
+window.addEventListener("orientationchange", () => {
+  setTimeout(setAppHeight, 100);
+});
+
 // モーダルのテキストを変更する
 let titleText;
 let bodyText;
@@ -112,7 +125,9 @@ window.addEventListener("load", function () {
 });
 
 // 最初の説明の画面をタッチで削除(cssアニメーションとタイミングを合わせて)
-topImage.addEventListener("touchstart", function () {
+topImage.addEventListener("touchstart", function (e) {
+  e.preventDefault();
+  setAppHeight(); // プレイ画面表示直前の高さで固定し直す
   this.classList = "splash";
   setTimeout(() => {
     this.remove();
